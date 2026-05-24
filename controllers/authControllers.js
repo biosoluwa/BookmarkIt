@@ -1,4 +1,5 @@
 
 export function registerUser(req, res){
-    console.log(req.body)
+    const data = req.body
+    console.log(data)
 }

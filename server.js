@@ -10,4 +10,10 @@ app.use(express.static('public'))
 
 app.use('/api/auth', authRouter)
 
+app.use((req, res)=>{
+    res.status(404).json({
+        message:'Endpoint not found'
+    })
+})
+
 app.listen(PORT, ()=> console.log(`Server listening on PORT ${PORT}`))
