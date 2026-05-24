@@ -88,7 +88,7 @@ async function sendData(firstName, lastName, signupEmail, signupPassword){
         const data = await res.json()
 
         if(res.ok){
-            window.location.replace('userPage.html')
+            // window.location.replace('user-page.html')
             console.log('Account created')
         }else{
             console.log('Failed to create account')
