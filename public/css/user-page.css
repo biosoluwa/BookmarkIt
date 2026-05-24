@@ -1,0 +1,214 @@
+*{
+      box-sizing: border-box;
+}
+
+
+html,body{
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      background-color: #30302e;
+}
+
+body{
+      display: flex;
+      flex-direction: column;
+      font-family: "Sansita Swashed", system-ui;
+}
+
+input, select, textarea, button{
+      font-family: inherit;
+}
+
+header{
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid rgb(222 220 209 / 15%);
+    padding: 0.8125em 1.25em;
+    align-items: center;
+}
+
+.logo{
+      font-size: 1.125rem;
+      font-weight: 900;
+      color: rgb(250 249 245);
+}
+
+.logo > i{
+    color: #7c3aed;
+    font-size: 1.125rem;
+}
+
+.user-logout{
+    display: flex;
+    gap: 0.625em;
+    align-items: center;
+}
+
+.user-mail{
+    color: rgb(194 192 182);
+    font-size: 0.8125rem;
+}
+
+.log-out{
+    color: rgb(156 154 146);
+    font-size: 0.75rem;
+    border: 0.5px solid rgb(222 220 209 / 30%);
+    border-radius: 0.375em;
+    padding: 0.3125em 0.625em;
+    cursor: pointer;
+    background: none;
+}
+
+main{
+    display: flex;
+}
+
+.left-container{
+    color: #C2C0B6;
+      display: flex;
+      flex-direction: column;
+      width: 30%;
+      border-right: 0.5px solid rgb(222 220 209 / 15%);
+      padding: 1em 0.875em;
+      gap: 0.25em;
+}
+
+.s-item{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    padding: 7px 8px;
+    border-radius: 6px;
+}
+
+.s-item:hover{
+    background-color: rgb(20 20 19);
+}
+
+.s-item-left{
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+}
+
+.s-item  p{
+    margin: 0;
+}
+
+.s-count{
+    font-size: 0.625rem;
+    background-color: rgb(38 38 36);
+    color:rgb(156 154 146);
+    padding: 1px 7px ;
+    border-radius: 50%;
+    text-align: center;
+}
+
+div.hr{
+    border-bottom: 1px solid rgb(222 220 209 / 15%);
+    margin: 0.5em 0;
+}
+
+.round{
+    width: 0.5em;
+    height: 0.5em;
+    border-radius: 50%;
+}
+
+.blue{
+    background-color: #185FA5;
+}
+
+.purple{
+    background-color: #7c3aed;
+}
+
+.orange{
+    background-color: #993C1D;
+}
+
+.green{
+    background-color: #0F6E56;
+}
+
+.right-container{
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+}
+
+.search-add-div{
+    display: flex;
+    padding: 0.75em 1em;
+    border-bottom: rgb(222 220 209 / 15%);
+    background: rgb(38 38 36);
+    gap: 1em;
+}
+
+input.search-input{
+    height: 36px;
+    padding: 0.5em 0.75em;
+    font-size: 1rem;
+    background-color: rgb(48 48 46);
+    color: rgb(250 249 245);
+    border: 0.5px solid rgb(222 220 209 / 15%);
+    border-radius: 0.675em;
+    outline: none;
+    width: 60%;
+}
+
+a.add-bookmark{
+    width: 40%;
+    text-decoration: none;
+    padding: 0.5em 1em;
+    font-size: 0.875rem;
+    background: transparent;
+    color: rgb(250 249 245);
+    border: 0.5px solid rgb(222 220 209 / 30%);
+    border-radius: 0.5em;
+    cursor: pointer;
+}
+
+.stats-row{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.625em;
+    padding: 0.875em 1em;
+    border-bottom: 0.5px solid rgb(222 220 209 / 15%);
+}
+
+.stat{
+    background-color: rgb(38 38 36);
+    border-radius: 0.5em;
+    padding: 0.625em 0.75em;
+    text-align: center;
+    color: rgb(156 154 146);
+}
+
+.twelve{
+    color: 1.125em;
+    color: rgb(250 249 245);
+}
+
+.stat-i{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.blue-num{
+    background-color: none;
+    color: #185FA5;
+}
+
+.purple-num{
+    color: #7c3aed;
+}
+
+.orange-num{
+    color: #993C1D;
+}
+
+

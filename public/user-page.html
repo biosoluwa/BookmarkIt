@@ -4,8 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
-
+    <link rel="stylesheet" href="./css/user-page.css">
 </head>
 <body>
     <header>
@@ -13,85 +14,87 @@
             <i class="fa-regular fa-bookmark"></i>
             <span>BookmarkIt</span>
         </div>
-        <div>
-            <p></p>
-            <button>Log out</button>
+        <div class="user-logout"> 
+            <p class="user-mail">alex@gmail.com</p>
+            <button class="log-out">Log out</button>
         </div>
     </header>
     <main>
         <div class="left-container">
             <p>FILTER</p>
-            <div>
-                <div>
+            <div class="s-item">
+                <div class="s-item-left">
                     <i class="ti ti-layout-list"></i>
                     <span>All</span>
                 </div>
-                <div>12</div>
+                <div class="s-count">12</div>
             </div>
-            <div>
-                <i class="ti ti-star"></i>
-                <span>Favourites</span>
+            <div class="s-item">
+                <div class="s-item-left">
+                    <i class="ti ti-star"></i>
+                    <span>Favourites</span>
+                </div>
+                <div class="s-count">3</div>
             </div>
-            <div>3</div>
-            <hr>
-            <p>BY TAG</p>
-            <div>
-                <div>
-                    <div></div>
+        <div class="hr"></div>      
+        <p>BY TAG</p>
+            <div class="s-item">
+                <div class="s-item-left">
+                    <div class="round blue"></div>
                     <p>article</p>
                 </div>  
-                <span>5</span>
+                <div class="s-count">5</div>
             </div>
-            <div>
-                <div>
-                    <div></div>
+            <div class="s-item">
+                <div class="s-item-left">
+                    <div class="round purple"></div>
                     <p>tool</p>
                 </div>  
-                <span>4</span>
+                <div class="s-count">4</div>
             </div>
-            <div>
-                <div>
-                    <div></div>
+            <div class="s-item">
+                <div class="s-item-left">
+                    <div class="round orange"></div>
                     <p>video</p>
                 </div>  
-                <span>2</span>
+                <div class="s-count">2</div>
             </div>
-            <div>
-                <div>
-                    <div></div>
+            <div class="s-item">
+                <div class="s-item-left">
+                    <div class="round green"></div>
                     <p>reference</p>
                 </div>  
-                <span>1</span>
+                <div class="s-count">1</div>
             </div>
         </div>
         <div class="right-container">
-            <div>
-                <input type="text" name="" id="">
-                <a href="add-bookmark.html"><i class="ti ti-plus"></i> Add bookmark </a>
+            <div class="search-add-div">
+                <input type="text" class="search-input" name="search-input" id="" aria-label="search for your bookmark" placeholder="Search bookmarks...">
+                <a href="add-bookmark.html" class="add-bookmark"><i class="ti ti-plus"></i> Add bookmark </a>
             </div>
-            <div>
-                <div>
-                    <span>12</span>
+            <div class="stats-row">
+                <div class="stat">
+                    <span class="twelve">12</span>
                     <p>Total saved</p>
                 </div>
-                <div>
-                    <span>5</span>
-                    <div>
-                        <div></div>
+                <div class="stat">
+                    <span class="blue-num">5</span>
+                    <div class="stat-i">
+                        <div class="round blue"></div>
                         <p>Articles</p>
                     </div>
                 </div>
-                <div>
-                    <span>4</span>
-                    <div>
-                        <div></div>
+                <div class="stat">
+                    <span class="purple-num">4</span>
+                    <div class="stat-i">
+                        <div class="round purple"></div>
                         <p>Tools</p>
                     </div>
                 </div>
-                 <div>
-                    <span>3</span>
-                    <div>
-                        <div></div>
+                 <div class="stat">
+                    <span class="orange-num">3</span>
+                    <div class="stat-i">
+                        <div class="round orange"></div>
                         <p>Favourites</p>
                     </div>
                 </div>
@@ -99,5 +102,6 @@
             <div></div>
         </div>
     </main>
+    <script src="./js/user-page.js"></script>
 </body>
 </html>

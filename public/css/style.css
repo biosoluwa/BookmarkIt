@@ -189,7 +189,7 @@ span.enter-valid{
 }
 
 .agree-checkbox input[type="checkbox"]{
-
+      cursor: pointer;
       accent-color: #7c3aed;
       background-color: #C2C0B6;
 }
