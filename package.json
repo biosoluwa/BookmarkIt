@@ -18,5 +18,11 @@
   "bugs": {
     "url": "https://github.com/biosoluwa/BookmarkIt/issues"
   },
-  "homepage": "https://github.com/biosoluwa/BookmarkIt#readme"
+  "homepage": "https://github.com/biosoluwa/BookmarkIt#readme",
+  "dependencies": {
+    "bcryptjs": "^3.0.3",
+    "sqlite": "^5.1.1",
+    "sqlite3": "^6.0.1",
+    "validator": "^13.15.35"
+  }
 }
