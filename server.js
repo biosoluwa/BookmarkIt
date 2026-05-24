@@ -1,5 +1,13 @@
 import express from 'express'
-const PORT = 8000
+import { authRouter } from './routers/authRoutes.js'
+
 const app = express()
+const PORT = 8000
+
+app.use(express.json())
+
+app.use(express.static('public'))
+
+app.use('/api/auth', authRouter)
 
 app.listen(PORT, ()=> console.log(`Server listening on PORT ${PORT}`))
