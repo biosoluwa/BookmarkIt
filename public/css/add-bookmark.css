@@ -1,0 +1,253 @@
+*{
+      box-sizing: border-box;
+}
+
+
+html,body{
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      background-color: #30302e;
+}
+
+body{
+      display: flex;
+      flex-direction: column;
+      font-family: "Sansita Swashed", system-ui;
+}
+
+input, select, textarea, button{
+      font-family: inherit;
+}
+
+header{
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid rgb(222 220 209 / 15%);
+    padding: 0.8125em 1.25em;
+    align-items: center;
+}
+
+.logo{
+      font-size: 1.125rem;
+      font-weight: 900;
+      color: rgb(250 249 245);
+}
+
+.logo > i{
+    color: #7c3aed;
+    font-size: 1.125rem;
+}
+
+.user-logout{
+    display: flex;
+    gap: 0.625em;
+    align-items: center;
+}
+
+.user-mail{
+    color: rgb(194 192 182);
+    font-size: 0.8125rem;
+}
+
+.log-out{
+    color: rgb(156 154 146);
+    font-size: 0.75rem;
+    border: 0.5px solid rgb(222 220 209 / 30%);
+    border-radius: 0.375em;
+    padding: 0.3125em 0.625em;
+    cursor: pointer;
+    background: none;
+}
+
+main{
+    display: flex;
+}
+
+.left-container{
+    color: #C2C0B6;
+      display: flex;
+      flex-direction: column;
+      width: 30%;
+      border-right: 0.5px solid rgb(222 220 209 / 15%);
+      padding: 1em 0.875em;
+      gap: 0.25em;
+}
+
+.s-item{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    padding: 7px 8px;
+    border-radius: 6px;
+}
+
+.s-item:hover{
+    background-color: rgb(20 20 19);
+}
+
+.s-item-left{
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+}
+
+.s-item  p{
+    margin: 0;
+}
+
+.s-count{
+    font-size: 0.625rem;
+    background-color: rgb(38 38 36);
+    color:rgb(156 154 146);
+    padding: 1px 7px ;
+    border-radius: 50%;
+    text-align: center;
+}
+
+div.hr{
+    border-bottom: 1px solid rgb(222 220 209 / 15%);
+    margin: 0.5em 0;
+}
+
+.round{
+    width: 0.5em;
+    height: 0.5em;
+    border-radius: 50%;
+}
+
+.blue{
+    background-color: #185FA5;
+}
+
+.purple{
+    background-color: #7c3aed;
+}
+
+.orange{
+    background-color: #993C1D;
+}
+
+.green{
+    background-color: #0F6E56;
+}
+
+.right-container{
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    padding: 2em 2.5em;
+    justify-content: center;
+    color: rgb(250 249 245);
+}
+
+.form-title{
+    font-size: 1.125em;
+    font-weight: 500;
+}
+
+.sub-title{
+    color: rgb(194 192 182);
+    font-size: 0.8125em;
+}
+
+form{
+      display: flex;
+      flex-direction: column;
+      gap: 1em;
+}
+
+form > div{
+      display: flex;
+      flex-direction: column;
+}
+
+ label{
+      color: #C2C0B6;
+}
+
+ input{
+      height: 36px;
+      padding: 0.5em 0.75em;
+      font-size: 1rem;
+      background-color: rgb(48, 48, 46);
+      color: rgba(250, 249, 245, 1);
+      border: 0.5px solid rgba(222, 220, 209, 0.15);
+      border-radius: 0.375em;
+      outline: none;
+      transition: border-color 0.15s, box-shadow 0.15s;
+}
+
+.tags{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.tag-type{
+    font-size: 0.8125rem;
+    padding: 7px 16px;
+    border-radius: 99px;
+    border: 0.5px solid rgb(222 220 209 / 30%);
+    cursor: pointer;
+    color: rgb(194 192 182);
+    display: flex;
+    align-items: center;
+    gap: 0.4em;
+}
+
+.tag-type:hover{
+    background-color: #7c3aed;
+}
+
+.fav-toggle{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 14px;
+    border: 0.5px solid rgb(222 220 209 / 30%);
+    border-radius: 8px;
+    cursor: pointer;
+    background-color: rgb(38 38 36);
+    margin-top: 0.5em;
+}
+
+.fav-text{
+    font-size: 13px;
+    color: rgb(194 192 182);
+}
+
+.fav-text > .strong{
+    color: rgb(250 249 245);
+    font-weight: 500;
+
+}
+
+.nav-bottom{
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.nav-bottom > a{
+    width: 25%;
+    padding: 8px 16px;
+    font-size: 0.875em;
+    background: transparent;
+    color: rgb(250 249 245);
+    border: 0.5px solid rgb(222 220 209 / 30%);
+    border-radius: 8px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.nav-bottom > button{
+    width: 70%;
+      font-size: 0.875em;
+      background-color: transparent;
+      color: rgb(250 249 245);
+      border-radius: 0.5em;
+      cursor: pointer;
+      padding: 0.5em 1em;
+      border: 0.5px solid rgb(222 220 209 / 30%);
+}

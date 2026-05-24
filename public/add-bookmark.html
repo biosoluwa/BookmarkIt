@@ -4,7 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+    <link rel="stylesheet" href="css/add-bookmark.css">
 
 </head>
 <body>
@@ -13,100 +15,105 @@
             <i class="fa-regular fa-bookmark"></i>
             <span>BookmarkIt</span>
         </div>
-        <div>
-            <p></p>
-            <button>Log out</button>
+        <div class="user-logout">
+            <p class="user-mail" id="user-mail"></p>
+            <button class="log-out">Log out</button>
         </div>
     </header>
     <main>
         <div class="left-container">
             <p>FILTER</p>
-            <div>
-                <div>
+            <div class="s-item">
+                <div class="s-item-left">
                     <i class="ti ti-layout-list"></i>
                     <span>All</span>
                 </div>
-                <div>12</div>
+                <div class="s-count">12</div>
             </div>
-            <div>
-                <i class="ti ti-star"></i>
-                <span>Favourites</span>
+            <div class="s-item">
+                <div class="s-item-left">
+                    <i class="ti ti-star"></i>
+                    <span>Favourites</span>
+                </div>
+                <div class="s-count">3</div>
             </div>
-            <div>3</div>
-            <hr>
+          <div class="hr"></div>      
             <p>BY TAG</p>
-            <div>
-                <div>
-                    <div></div>
+            <div class="s-item">
+                <div class="s-item-left">
+                    <div class="round blue"></div>
                     <p>article</p>
                 </div>  
-                <span>5</span>
+                <span class="s-count">5</span>
             </div>
-            <div>
-                <div>
-                    <div></div>
+            <div class="s-item">
+                <div class="s-item-left">
+                    <div class="round purple"></div>
                     <p>tool</p>
                 </div>  
-                <span>4</span>
+                <span class="s-count">4</span>
             </div>
-            <div>
-                <div>
-                    <div></div>
+            <div class="s-item">
+                <div class="s-item-left">
+                    <div class="round orange"></div>
                     <p>video</p>
                 </div>  
-                <span>2</span>
+                <spa class="s-count">2</span>
             </div>
-            <div>
-                <div>
-                    <div></div>
+            <div class="s-item">
+                <div class="s-item-left">
+                    <div class="round green"></div>
                     <p>reference</p>
                 </div>  
-                <span>1</span>
+                <span class="s-count">1</span>
             </div>
         </div>
         <div class="right-container">
-            <h1>Add a bookmark</h1>
-            <p>Paste a link, give it a tag, and save it to your collection.</p>
-            <form action="">
+            <h1 class="form-title">Add a bookmark
+                <br>
+            <span class="sub-title">Paste a link, give it a tag, and save it to your collection.</span>
+            </h1>
+            <form>
                 <div>
-                    <label for="title">TITLE</label>
-                    <input type="text" name="" id="">
+                    <label for="title-input">TITLE</label>
+                    <input type="text" name="title-input" id="title-input" required>
                 </div>
                 <div>
-                    <label for="">URL</label>
-                    <input type="url">
-                    <div class="link-preview">Link preview fetched automatically</div>
+                    <label for="url-input">URL</label>
+                    <input type="url" id="url-input" name="url-input" required>
                 </div>
                 <div>
                     <label for="">TAG</label>
-                    <div>
-                        <i class="ti ti-tool"></i>
-                        <span>tool</span>
-                    </div>
-                     <div>
-                        <i class="ti ti-article"></i>
-                        <span>article</span>
-                    </div>
-                     <div>
-                        <i class="ti ti-video"></i>
-                        <span>video</span>
-                    </div>
-                     <div>
-                        <i class="ti ti-book"></i>               
-                        <span>reference</span>
-                    </div>
-                </div>
-                <div>
-                    <label for="">MARK AS FAVORITE?</label>
-                    <div>
-                        <i class="ti ti-star-filed" aria-hidden="true"></i>
-                        <div>
-                            <strong>Yes, add to favorites</strong>
-                            "Click to toggle"
+                    <div class="tags">
+                        <div class="tag-type">
+                            <i class="ti ti-tool"></i>
+                            <span>tool</span>
+                        </div>
+                        <div class="tag-type">
+                            <i class="ti ti-article"></i>
+                            <span>article</span>
+                        </div>
+                        <div class="tag-type">
+                            <i class="ti ti-video"></i>
+                            <span>video</span>
+                        </div>
+                        <div class="tag-type">
+                            <i class="ti ti-book"></i>               
+                            <span>reference</span>
                         </div>
                     </div>
                 </div>
                 <div>
+                    <label for="">MARK AS FAVORITE?</label>
+                    <div class="fav-toggle">
+                        <i class="ti ti-star-filed" aria-hidden="true"></i>
+                        <div class="fav-text">
+                            <p class="strong">Yes, add to favorites</p>
+                            <span>Click to toggle</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="nav-bottom">
                     <a href="user-page.html">Cancel</a>
                     <button><i class="ti ti-bookmark"></i> Save bookmark</button>
                 </div>
