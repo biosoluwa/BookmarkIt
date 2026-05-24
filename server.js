@@ -1,5 +1,6 @@
 import express from 'express'
 import { authRouter } from './routers/authRoutes.js'
+import { meRouter } from './routers/meRouter.js'
 import session  from 'express-session'
 import dotenv from 'dotenv'
 
@@ -23,6 +24,9 @@ app.use(session({
 }))
 
 app.use(express.static('public'))
+
+app.use('/api/auth/me', meRouter)
+
 
 app.use('/api/auth', authRouter)
 
