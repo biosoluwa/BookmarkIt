@@ -1,5 +1,5 @@
 
 export function registerUser(req, res){
-    const data = req.body
-    console.log(data)
+    let {firstName, lastName, signupEmail, signupPassword} = req.body
+    console.log(firstName, lastName, signupEmail, signupPassword)
 }
