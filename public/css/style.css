@@ -1,0 +1,199 @@
+*{
+      box-sizing: border-box;
+}
+
+
+html,body{
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+}
+
+body{
+      display: flex;
+      font-family: "Sansita Swashed", system-ui;
+}
+
+input, select, textarea, button{
+      font-family: inherit;
+}
+.left-container{
+      background-color: #1a1a2e;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      width: 40%;
+      padding: 3em;
+      justify-content: space-between;
+}
+.left-container i{
+      color: #a78bfa;
+}
+
+.logo{
+      font-size: 1.125em;
+      font-weight: 900;
+      margin-bottom: 2em;
+}
+
+.features{
+      display: flex;
+      flex-direction: column;
+      gap: 1em;
+      align-items: start;
+}
+
+.perks{
+      display: flex;
+      justify-content: center;
+      gap: 0.5em;
+}
+
+.perks div{
+      width: 2em;
+      height: 2em;
+      padding: 1em;
+      border-radius: 0.375em;
+      background-color: rgba(167,139,250,0.15);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+}
+
+.perks p{
+      color: #e5e7eb;
+      margin: 0;
+}
+
+.perks span{
+      color: #9ca3af;
+      font-size: 0.75em;
+}
+
+.left-foot{
+      color: #4b5563;
+      font-size: 1em;
+}
+
+.right-container{
+      background-color: #30302e;
+      width: 70%;
+      display:  flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 0 2em;
+      gap: 1em;
+}
+
+.right-container > div{
+      display: flex;
+      border-bottom: 1px solid rgba(222, 220, 209, 0.15);
+      color: #C2C0B6;
+      gap: 1.5em;
+}
+
+.right-container > form,
+.right-container > div{
+      width: 100%;
+}
+
+.tab{
+      cursor: pointer;
+}
+
+.tab.on{
+      color: #7c3aed;
+      border-bottom: 2px solid #7c3aed;
+}
+
+.signup-form{
+      display: none;
+}
+
+form{
+      display: flex;
+      flex-direction: column;
+      gap: 1em;
+}
+
+form > div{
+      display: flex;
+      flex-direction: column;
+}
+
+ label{
+      color: #C2C0B6;
+}
+
+ input{
+      height: 36px;
+      padding: 0.5em 0.75em;
+      font-size: 1em;
+      background-color: rgb(48, 48, 46);
+      color: rgba(250, 249, 245, 1);
+      border: 0.5px solid rgba(222, 220, 209, 0.15);
+      border-radius: 0.375em;
+      outline: none;
+      transition: border-color 0.15s, box-shadow 0.15s;
+}
+
+form > button{
+      width: 100%;
+      font-size: 0.875em;
+      background-color: transparent;
+      color: rgb(250 249 245);
+      border-radius: 0.5em;
+      cursor: pointer;
+      padding: 0.5em 1em;
+      border: 0.5px solid rgb(222 220 209 / 30%);
+}
+
+.login-form >  .login-btn:hover {
+      background-color: rgb(38,38,36,1);
+}
+
+div.right-foots{
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      color: #C2C0B6;
+      gap: 0.5em;
+}
+
+div.right-foots > a{
+      text-decoration: none;
+      color: #7c3aed;
+}
+
+.signup-form .names{
+      display: flex;
+      flex-direction: row;
+      gap: 1em;
+}
+
+.signup-form .names > div{
+      display: flex;
+      flex-direction: column;
+      width: 50%;
+}
+
+span.enter-valid{
+      color: #e24b4a;
+}
+
+.agree-checkbox{
+      flex-direction: row;
+      align-items: center;
+}
+
+.agree-checkbox input[type="checkbox"]{
+
+      accent-color: #7c3aed;
+      background-color: #C2C0B6;
+}
+
+.purple{
+      color: #7c3aed;
+}
