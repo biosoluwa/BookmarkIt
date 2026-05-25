@@ -1,6 +1,7 @@
 import express from 'express'
 import { authRouter } from './routers/authRoutes.js'
 import { meRouter } from './routers/meRouter.js'
+import { bookmarkRouter } from './routers/bookmarkRoutes.js'
 import session  from 'express-session'
 import dotenv from 'dotenv'
 
@@ -27,8 +28,9 @@ app.use(express.static('public'))
 
 app.use('/api/auth/me', meRouter)
 
-
 app.use('/api/auth', authRouter)
+
+app.use('/api/bookmarks', bookmarkRouter)
 
 app.use((req, res)=>{
     res.status(404).json({

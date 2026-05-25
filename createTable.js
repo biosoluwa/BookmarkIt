@@ -3,7 +3,7 @@ import {open} from 'sqlite'
 import path from 'node:path'
 import { dbConnection } from './dbConnection.js'
 
-async function createTable(){
+async function createUserTable(){
     const db = await dbConnection()
     await db.exec(`CREATE TABLE IF NOT EXISTS users(
         id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -18,4 +18,20 @@ async function createTable(){
     console.log('Table users created')
 }
 
-createTable()
+async function createBookmarkTable() {
+    const db = await dbConnection()
+
+    await db.exec(`CREATE TABLE IF NOT EXISTS bookmarks(
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        user_id INTEGER NOT NULL,
+        title UNIQUE TEXT NOT NULL,
+        url TEXT NOT NULL,
+        tag TEXT NOT NULL,
+        is_favorite INTEGER DEFAULT 0,
+        FOREIGN KEY (user_id) REFERENCES users(id)
+        )`)
+}
+
+createUserTable()
+
+createBookmarkTable()

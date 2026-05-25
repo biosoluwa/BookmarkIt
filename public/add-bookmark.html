@@ -73,7 +73,7 @@
                 <br>
             <span class="sub-title">Paste a link, give it a tag, and save it to your collection.</span>
             </h1>
-            <form>
+            <form id="bookmark-form">
                 <div>
                     <label for="title-input">TITLE</label>
                     <input type="text" name="title-input" id="title-input" required>
@@ -84,31 +84,31 @@
                 </div>
                 <div>
                     <label for="">TAG</label>
-                    <div class="tags">
+                    <div class="tags" id="tags">
                         <div class="tag-type">
                             <i class="ti ti-tool"></i>
-                            <span>tool</span>
+                            <span class="tag-type-text">tool</span>
                         </div>
                         <div class="tag-type">
                             <i class="ti ti-article"></i>
-                            <span>article</span>
+                            <span class="tag-type-text">article</span>
                         </div>
                         <div class="tag-type">
                             <i class="ti ti-video"></i>
-                            <span>video</span>
+                            <span class="tag-type-text">video</span>
                         </div>
                         <div class="tag-type">
                             <i class="ti ti-book"></i>               
-                            <span>reference</span>
+                            <span class="tag-type-text">reference</span>
                         </div>
                     </div>
                 </div>
                 <div>
                     <label for="">MARK AS FAVORITE?</label>
-                    <div class="fav-toggle">
-                        <i class="ti ti-star-filed" aria-hidden="true"></i>
+                    <div class="fav-toggle" id="fav-toggle">
+                        <i class="ti ti-star-filled" aria-hidden="true"></i>
                         <div class="fav-text">
-                            <p class="strong">Yes, add to favorites</p>
+                            <p class="strong" id="fav-text-strong">Yes, add to favorites</p>
                             <span>Click to toggle</span>
                         </div>
                     </div>
@@ -120,5 +120,6 @@
             </form>
         </div>
     </main>
+    <script src="js/add-bookmark.js"></script>
 </body>
 </html>
