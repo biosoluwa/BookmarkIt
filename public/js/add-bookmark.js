@@ -1,4 +1,11 @@
 import { logout } from "./logout.js"
+import { returnEmail } from "./returnEmail.js"
+
+
+const mail = await returnEmail()
+const mailP = document.getElementById('user-mail')
+mailP.innerHTML = mail
+
 
 const bookmarkForm = document.getElementById('bookmark-form')
 
