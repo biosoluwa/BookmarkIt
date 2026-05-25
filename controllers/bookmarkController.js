@@ -3,9 +3,9 @@ import { dbConnection } from '../dbConnection.js'
 
 
 export async function addBookmark(req,res) {
-    let {title, url, tag, isFavorite} = req.body
+    let {title, url, tag, favoriteStatus} = req.body
 
-    if(!title || !url || !tag || isFavorite){
+    if(!title || !url || !tag || !favoriteStatus){
         return res.status(400).json({error: 'All fields required'})
     }
 
@@ -19,9 +19,10 @@ export async function addBookmark(req,res) {
         if(existing){
             return res.status(400).json({error: 'Url already exixts'})
         }
-        await db.run(`INSERT INTO bookmarks(title, url, tag, is_favorite)VALUES(?,?,?,?)`, [title, url, tag, isFavorite])
+        await db.run(`INSERT INTO bookmarks(title, url, tag, is_favorite)VALUES(?,?,?,?)`, [title, url, tag, favoriteStatus])
         res.status(201).json({message: "New bookmark added"})
     }catch(err){
         res.status(500).json({error: "Internal server error"})
+        console.log(err)
     }
 }

@@ -24,12 +24,14 @@ async function createBookmarkTable() {
     await db.exec(`CREATE TABLE IF NOT EXISTS bookmarks(
         id INTEGER PRIMARY KEY AUTOINCREMENT,
         user_id INTEGER NOT NULL,
-        title UNIQUE TEXT NOT NULL,
+        title TEXT UNIQUE NOT NULL,
         url TEXT NOT NULL,
         tag TEXT NOT NULL,
         is_favorite INTEGER DEFAULT 0,
         FOREIGN KEY (user_id) REFERENCES users(id)
         )`)
+        await db.close()
+        console.log('Table bookmarks created')
 }
 
 createUserTable()
