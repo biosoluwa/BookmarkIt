@@ -68,6 +68,9 @@ async function sendBookmarkData(bookmarkObj){
         })
         if(!res.ok){
             console.log('Failed to send bookmarks. Please try again')
+            window.location.href = '/'
+        }else{
+            window.location.href = 'user-page.html'
         }
     }catch(err){
         console.error(err.message)

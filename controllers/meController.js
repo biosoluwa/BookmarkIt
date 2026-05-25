@@ -6,11 +6,11 @@ export async function meController(req, res){
 
     const db = await dbConnection()
 
-    if(!req.session.userId){
-        return res.json({
-            isLoggedin: false
-        })
-    }
+    // if(!req.session.userId){
+    //     return res.json({
+    //         isLoggedin: false
+    //     })
+    // }
 
 
     const user = await db.get(`SELECT email FROM users WHERE id = ?`,

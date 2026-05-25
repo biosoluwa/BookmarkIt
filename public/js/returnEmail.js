@@ -5,6 +5,7 @@ export async function returnEmail() {
         const data = await res.json()
 
         if(!res.ok){
+            window.location.href = '/'
             console.log(`Failed to fetch user's email: ${res.status}`)
         }
 
