@@ -1,4 +1,7 @@
+import { logout } from "./logout.js"
+
 const bookmarkForm = document.getElementById('bookmark-form')
+
 let tagText = ''
 let isFavorite = false
 
@@ -14,8 +17,9 @@ tags = Array.from(tags)
 
 
 document.getElementById('fav-toggle').addEventListener('click', function(){
+       const favtextStrong = document.getElementById('fav-text-strong')
+
         const star = document.querySelector('.ti-star-filled')
-        const favtextStrong = document.getElementById('fav-text-strong')
         star.classList.toggle('show-star')
         isFavorite = !isFavorite
         if(isFavorite){
@@ -62,4 +66,6 @@ async function sendBookmarkData(bookmarkObj){
         console.error(err.message)
     }
 }
+
+document.getElementById('log-out').addEventListener('click', logout)
 

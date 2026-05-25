@@ -32,3 +32,14 @@ export async function addBookmark(req,res) {
         console.log(err)
     }
 }
+
+
+export async function getBookmarks(req,res) {
+    try{
+        const db = await dbConnection()
+        const result = await db.all(`SELECT * FROM bookmarks WHERE user_id =?`, [req.session.userId])
+        res.json({bookmarks: result})
+    }catch(err){
+        res.status(500).json({error: "Internal server error"})
+    }
+}

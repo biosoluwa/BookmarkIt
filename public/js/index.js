@@ -97,3 +97,40 @@ async function sendData(firstName, lastName, signupEmail, signupPassword){
         console.error('Network error:', err)
     }
 }
+
+
+loginForm.addEventListener('submit', async(e)=>{
+    e.preventDefault()
+    const loginFormData = new FormData(loginForm)
+    const email = loginFormData.get('email')
+    const password = loginFormData.get('password')
+
+    const loginDetails = {
+        email: email,
+        password: password
+    }
+
+    await sendLoginDetails(loginDetails)
+    loginForm.reset()
+})
+
+async function sendLoginDetails(loginDetails){
+    try{
+        const res = await fetch('/api/auth/login', {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            credentials: 'include', 
+            body: JSON.stringify(loginDetails)
+        })
+
+        if(res.ok){
+            window.location.href = 'user-page.html'
+        }else{
+            console.log('Login failed. Please try again')
+        }
+    }catch(err){
+        console.error('Network error:', err)
+    }
+}

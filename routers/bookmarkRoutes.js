@@ -1,5 +1,10 @@
 import express from 'express'
-import { addBookmark } from '../controllers/bookmarkController.js'
+import { addBookmark, getBookmarks } from '../controllers/bookmarkController.js'
+import { requireAuth } from '../middleware/requireAuth.js'
+
+
 export const bookmarkRouter = express.Router()
 
-bookmarkRouter.post('/add', addBookmark)
+bookmarkRouter.post('/add', requireAuth, addBookmark)
+
+bookmarkRouter.get('/all', requireAuth, getBookmarks)
