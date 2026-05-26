@@ -1,6 +1,3 @@
-import sqlite3 from 'sqlite3'
-import {open} from 'sqlite'
-import path from 'node:path'
 import { dbConnection } from './dbConnection.js'
 
 async function createUserTable(){
@@ -28,7 +25,6 @@ async function createBookmarkTable() {
         url TEXT NOT NULL,
         tag TEXT NOT NULL,
         is_favorite INTEGER DEFAULT 0,
-        created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
         FOREIGN KEY (user_id) REFERENCES users(id)
         )`)
         await db.close()
