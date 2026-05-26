@@ -102,7 +102,7 @@ async function sendData(firstName, lastName, signupEmail, signupPassword){
             window.location.replace('user-page.html')
             console.log('Account created')
         }else{
-            document.getElementById('signup-error-message').innerHTML = res.error
+            document.getElementById('signup-error-message').innerHTML = data.error
             console.log('Failed to create account')
         }
     }catch(err){
@@ -136,11 +136,11 @@ async function sendLoginDetails(loginDetails){
             credentials: 'include', 
             body: JSON.stringify(loginDetails)
         })
-
+        const data = await res.json()
         if(res.ok){
             window.location.href = 'user-page.html'
         }else{
-            document.getElementById('login-error-message').innerHTML = res.error
+            document.getElementById('login-error-message').innerHTML = data.error
             console.log('Login failed. Please try again')
         }
     }catch(err){
