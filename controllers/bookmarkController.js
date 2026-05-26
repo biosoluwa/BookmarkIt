@@ -50,22 +50,22 @@ export async function filterBookmarks(req,res) {
 
     try{
         const db = await dbConnection()
-        let query = `SELECT * FROM bookmarks`
-        let param = []
+        let query = `SELECT * FROM bookmarks WHERE user_id = ?`
+        let param = [req.session.userId]
         if(is_favorite){
-            query += `WHERE is_favorite=?`
+            query += ` AND is_favorite=?`
             param.push(is_favorite)
         }else if(tag){
-            query += `WHERE tag=?`
+            query += ` AND tag=?`
             param.push(tag)
         }else if(search){
-            query += `WHERE tag LIKE? OR title LIKE?`
+            query += ` AND (tag LIKE? OR title LIKE?)`
             const searchPattern = `%${search}%`
             param.push(searchPattern, searchPattern)
         }
 
         const filteredBookmarks = await db.all(query, param)
-        res.json(filterBookmarks)
+        res.json(filteredBookmarks)
     }catch(err){
         res.status(500).json({error: 'Internal server error'})
     }

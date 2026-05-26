@@ -6,8 +6,7 @@ const mail = await returnEmail()
 const mailP = document.getElementById('user-mail')
 mailP.innerHTML = mail
 
-renderBookmarks()
-renderStatsCount()
+fetchBookmarks()
 
 document.getElementById('log-out').addEventListener('click', logout)
 
@@ -21,6 +20,7 @@ async function fetchBookmarks() {
         }
         const data = await res.json()
         renderBookmarks(data)
+        renderStatsCount(data)
     }catch(err){
         console.log(err)
     }
@@ -66,8 +66,7 @@ export function renderBookmarks(data){
     document.getElementById('bookmarks-container').innerHTML = bookmarkHtml
 }
 
-async function renderStatsCount(){
-    const data = await fetchBookmarks()
+ function renderStatsCount(data){
 
     let allCount = document.getElementById('all-count')
     let totalSaved = document.getElementById('total-saved')
@@ -87,34 +86,34 @@ async function renderStatsCount(){
     let orangenum = document.getElementById('orange-num')
 
 
-    totalSaved.innerHTML = data.length
-    allCount.innerHTML = data.length
+    totalSaved.textContent = data.length
+    allCount.textContent = data.length
 
     const article = data.filter((bookmark)=> bookmark.tag === 'article')
-    const tools = data.filter((bookmark)=> bookmark.tag === 'tools')
+    const tools = data.filter((bookmark)=> bookmark.tag === 'tool')
     const video = data.filter((bookmark)=> bookmark.tag === 'video')
     const reference = data.filter((bookmark)=> bookmark.tag === 'reference')
 
     const favorite = data.filter((bookmark)=> bookmark.is_favorite === 1)
 
-    bluenum.innerHTML = article.length
+    bluenum.textContent = article.length
     scountArticle.textContent = article.length
 
 
-    purplenum.innerHTML = tools.length
+    purplenum.textContent = tools.length
     scountTool.textContent = tools.length
 
-    orangenum.innerHTML = favorite.length
+    orangenum.textContent = favorite.length
     scountFavorites.textContent = favorite.length
 
     scountVideo.textContent = video.length
-    scountReference = reference.length
+    scountReference.textContent = reference.length
 
 }
 
 document.addEventListener('click', async(e)=>{
     if(e.target.id === 'all-items'){
-       await renderBookmarks()
+       await fetchBookmarks()
     }else if(e.target.id === 'favorite-div'){
        await getFavorites()
     }else if(e.target.id === 'article-div'){
@@ -122,9 +121,9 @@ document.addEventListener('click', async(e)=>{
     }else if(e.target.id === 'tool-div'){
         await getTools()
     }else if(e.target.id === 'video-div'){
-        await getTools()
+        await getVideos()
     }else if(e.target.id === 'reference-div'){
-        await getTools()
+        await getReference()
     }
 })
 

@@ -1,6 +1,6 @@
 import { renderBookmarks } from "./user-page.js"
 
-export async function getFavorites(){
+ async function getFavorites(){
     try{
         const res = await fetch('/api/bookmarks/filter?is_favorite=1')
         if(!res.ok){
