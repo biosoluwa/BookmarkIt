@@ -71,7 +71,7 @@ export async function filterBookmarks(req,res) {
     }
 }
 
-export async function deleteBookmark(){
+export async function deleteBookmark(req, res){
     try{
         const db = await dbConnection()
 
@@ -80,7 +80,7 @@ export async function deleteBookmark(){
             return res.status(400).json({error: 'Invalid Item ID'})
         }
 
-        await db.run(`DELETE FROM bookmarks WHERE id = ? and user_id`, [cardId, req.session.userId])
+        await db.run(`DELETE FROM bookmarks WHERE id = ? and user_id =?`, [cardId, req.session.userId])
         res.status(204).send()
     }catch(err){
         res.status(500).json({error: 'Internal server error'})

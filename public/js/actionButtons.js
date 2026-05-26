@@ -2,16 +2,16 @@ import { fetchBookmarks } from "./user-page.js"
 
 async function deleteItem(cardId){
     try{
-        const res = await fetch(`/api/bookmark/${cardId}`, {
+        const res = await fetch(`/api/bookmarks/${cardId}`, {
             method: "DELETE",
             credentials: 'include'
         })
 
-        if(res.status === 204){
-            await fetchBookmarks()
-        }else{
+        if(!res.ok){
             console.error('Error removing item:', await res.text())
+            return
         }
+        await fetchBookmarks()
     }catch(err){
         console.error('error removing item:', err)
     }
@@ -21,7 +21,9 @@ async function deleteItem(cardId){
 async function shareURL(link){
     try{
         if(navigator.share){
-            await navigator.share(link)
+            await navigator.share({
+                url: link
+            })
             console.log('Shared succesfully')
         }else{
             alert('Share not supported in this browser')

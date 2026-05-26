@@ -58,7 +58,6 @@ export function renderBookmarks(data){
                         </div>
                     </div>
                     <div class="card-actions">
-                        <button class="action-btn edit"><i class="ti ti-edit"></i></button>
                         <button class="action-btn share"><i class="ti ti-external-link"></i></button>
                         <button class="action-btn del"><i class="ti ti-trash"></i></button>
                     </div>
@@ -135,14 +134,14 @@ searchInput.addEventListener('input', async()=>{
     await renderSearch(searchInput.value)
 })
 
-document.getElementById('bookmarks-container').addEventListener('click', function(e){
+document.getElementById('bookmarks-container').addEventListener('click', async function(e){
     if(e.target.classList.contains('del')){
         const card = e.target.closest('.card')
         const cardId = card.getAttribute('data-id')
-        deleteItem(cardId)
+        await deleteItem(cardId)
     }else if(e.target.classList.contains('share')){
-        const card = e.target.closest('card')
+        const card = e.target.closest('.card')
         const link = card.querySelector('.card-url').textContent
-        shareURL(link)
+        await shareURL(link)
     }
 })

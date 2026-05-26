@@ -47,9 +47,8 @@ document.addEventListener('click', (e)=>{
 confirmPassword.addEventListener('input', checkPasswords)
 
 
-signupEmailInput.addEventListener('blur', (e)=>{
-    const value = e.target.value;
-    if(!validateEmail(value)){
+signupEmailInput.addEventListener('blur', ()=>{
+    if(!signupEmailInput.validity.valid){
         document.getElementById('enter-valid').textContent = 'Enter a valid email address'
     }else{
         document.getElementById('enter-valid').textContent = 'Your email address is valid'

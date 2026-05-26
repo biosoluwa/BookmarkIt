@@ -33,6 +33,21 @@ async function deleteUsersTable() {
         console.log('All rows deleted from users table')
 }
 
+async function updateCreatedAt(){
+    const db = await dbConnection()
+
+    await db.run(`
+        UPDATE bookmarks
+        SET created_at = CURRENT_TIMESTAMP
+        WHERE created_at IS NULL
+    `)
+
+    await db.close()
+    console.log('created_at updated')
+}
+
+// updateCreatedAt()
+
 // alterTable()
 // deleteBookmarkTable()
 // deleteUsersTable()
