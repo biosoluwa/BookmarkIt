@@ -114,7 +114,7 @@ export function renderBookmarks(data){
 document.addEventListener('click', async(e)=>{
     if(e.target.id === 'all-items'){
        await fetchBookmarks()
-    }else if(e.target.id === 'favorite-div'){
+    }else if(e.target.id === 'favorites-div'){
        await getFavorites()
     }else if(e.target.id === 'article-div'){
         await getArticles()

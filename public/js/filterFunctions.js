@@ -8,7 +8,6 @@ import { renderBookmarks } from "./user-page.js"
             return false
         }
         const data = await res.json()
-        console.log(data)
         renderBookmarks(data)
     }catch(err){
         console.error('Failed to fetch favorites', err)
@@ -23,7 +22,6 @@ async function getArticles(){
             return false
         }
         const data = await res.json()
-        console.log(data)
         renderBookmarks(data)
     }catch(err){
         console.error('Failed to fetch favorites', err)
@@ -38,7 +36,6 @@ async function getTools(){
             return false
         }
         const data = await res.json()
-        console.log(data)
         renderBookmarks(data)
     }catch(err){
         console.error('Failed to fetch favorites', err)
@@ -53,7 +50,6 @@ async function getVideos(){
             return false
         }
         const data = await res.json()
-        console.log(data)
         renderBookmarks(data)
     }catch(err){
         console.error('Failed to fetch favorites', err)
@@ -68,7 +64,6 @@ async function getReference(){
             return false
         }
         const data = await res.json()
-        console.log(data)
         renderBookmarks(data)
     }catch(err){
         console.error('Failed to fetch favorites', err)
@@ -83,7 +78,6 @@ async function renderSearch(searchInput){
             return false
         }
         const data = await res.json()
-        console.log(data)
         renderBookmarks(data)
     }catch(err){
         console.error('Failed to fetch favorites', err)
