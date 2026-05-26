@@ -135,11 +135,16 @@ searchInput.addEventListener('input', async()=>{
 })
 
 document.getElementById('bookmarks-container').addEventListener('click', async function(e){
-    if(e.target.classList.contains('del')){
+    const delBtn = e.target.closest('.del')
+    const shareBtn = e.target.closest('.share')
+
+    if(delBtn){
         const card = e.target.closest('.card')
         const cardId = card.getAttribute('data-id')
         await deleteItem(cardId)
-    }else if(e.target.classList.contains('share')){
+    }
+    
+    if(shareBtn){
         const card = e.target.closest('.card')
         const link = card.querySelector('.card-url').textContent
         await shareURL(link)

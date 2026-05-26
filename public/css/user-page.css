@@ -65,13 +65,14 @@ main{
 }
 
 .left-container{
-    color: #C2C0B6;
+     color: #C2C0B6;
       display: flex;
       flex-direction: column;
       width: 30%;
       border-right: 0.5px solid rgb(222 220 209 / 15%);
       padding: 1em 0.875em;
       gap: 0.25em;
+      min-height: 100vh;
 }
 
 .s-item{

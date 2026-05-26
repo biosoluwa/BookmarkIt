@@ -46,6 +46,17 @@ async function updateCreatedAt(){
     console.log('created_at updated')
 }
 
+async function dbTable() {
+    const db = await dbConnection()
+    db.exec('DROP TABLE bookmarks')
+    await db.close()
+
+    console.log('table deleted successfully')
+
+}
+
+// dbTable()
+
 // updateCreatedAt()
 
 // alterTable()

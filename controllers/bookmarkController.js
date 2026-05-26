@@ -26,7 +26,7 @@ export async function addBookmark(req,res) {
         if(existing){
             return res.status(400).json({error: 'Url already exixts'})
         }
-        await db.run(`INSERT INTO bookmarks(user_id, title, url, tag, is_favorite)VALUES(?, ?,?,?,?)`, [req.session.userId, title, url, tag, status])
+        await db.run(`INSERT INTO bookmarks(user_id, title, url, tag, is_favorite, created_at)VALUES(?, ?,?,?,?)`, [req.session.userId, title, url, tag, status])
         res.status(201).json({message: "New bookmark added"})
     }catch(err){
         res.status(500).json({error: "Internal server error"})
@@ -75,7 +75,7 @@ export async function deleteBookmark(req, res){
     try{
         const db = await dbConnection()
 
-        const cardId = parseInt(req.params.cardId)
+        const cardId = parseInt(req.params.id)
         if(isNaN(cardId)){
             return res.status(400).json({error: 'Invalid Item ID'})
         }

@@ -25,12 +25,13 @@ async function createBookmarkTable() {
         url TEXT NOT NULL,
         tag TEXT NOT NULL,
         is_favorite INTEGER DEFAULT 0,
+        created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
         FOREIGN KEY (user_id) REFERENCES users(id)
         )`)
         await db.close()
         console.log('Table bookmarks created')
 }
 
-createUserTable()
+// createUserTable()
 
 createBookmarkTable()
