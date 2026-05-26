@@ -1,12 +1,7 @@
-import sqlite3 from 'sqlite3'
-import {open} from 'sqlite'
-import path from 'node:path'
+import Database from 'better-sqlite3'
 
-export async function dbConnection(){
-    const db = await open({
-        filename: path.join('database.db'),
-        driver: sqlite3.Database
-    })
+const db = new Database('database.db')
 
+export function dbConnection() {
     return db
 }

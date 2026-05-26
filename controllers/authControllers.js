@@ -19,19 +19,16 @@ export async function registerUser(req, res){
     
     try{
 
-        const db = await dbConnection()
-        const existing = await db.get(`SELECT id FROM users WHERE email=?`,
-            [signupEmail]
-        )
+        const db =  dbConnection()
+        const existing =  db.prepare(`SELECT id FROM users WHERE email=?`).get(signupEmail)
         if(existing){
             return res.status(400).json({message: 'Email already exists!'})
         }
         
         signupPassword = await bcrypt.hash(signupPassword, 10)
 
-        const newUser = await db.run(`INSERT INTO users(first_name, last_name, email, password)VALUES(?,?,?,?)`,
-            [firstName, lastName, signupEmail, signupPassword]
-        )
+        const newUser =  db.prepare(`INSERT INTO users(first_name, last_name, email, password)VALUES(?,?,?,?)`).run(firstName, lastName, signupEmail, signupPassword)
+        
         req.session.userId = newUser.lastID
         res.status(201).json({message: 'user registered'})
 
@@ -56,8 +53,8 @@ export async function loginUser(req,res) {
     }
 
     try{
-        const db = await dbConnection()
-        const existing = await db.get(`SELECT * FROM users WHERE email=?`, [email]);
+        const db =  dbConnection()
+        const existing =  db.prepare(`SELECT * FROM users WHERE email=?`).gett(email);
         
         if(!existing){
             return res.status(401).json({error: 'Invalid credentials'})

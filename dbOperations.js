@@ -1,22 +1,22 @@
 import { dbConnection } from "./dbConnection.js";
 
-async function alterTable(){
-    const db = await dbConnection()
-    await db.exec(`ALTER TABLE bookmarks
+ function alterTable(){
+    const db =  dbConnection()
+     db.exec(`ALTER TABLE bookmarks
                     ADD  created_at DATETIME
         `)
 
-        await db.close()
+         db.close()
     console.log('Column created_at added to bookmarks table')
 
 }
 
-async function deleteBookmarkTable() {
+ function deleteBookmarkTable() {
         const db = await dbConnection()
 
-        await db.run(`DELETE FROM bookmarks`)
+         db.run(`DELETE FROM bookmarks`)
 
-        await db.close()
+         db.close()
         console.log('All rows deleted from bookmarks table')
 
 }
@@ -24,32 +24,32 @@ async function deleteBookmarkTable() {
 
 
 
-async function deleteUsersTable() {
+ function deleteUsersTable() {
         const db = await dbConnection()
 
-        await db.run(`DELETE FROM users`)
+         db.run(`DELETE FROM users`)
 
-        await db.close()
+         db.close()
         console.log('All rows deleted from users table')
 }
 
-async function updateCreatedAt(){
+ function updateCreatedAt(){
     const db = await dbConnection()
 
-    await db.run(`
+     db.run(`
         UPDATE bookmarks
         SET created_at = CURRENT_TIMESTAMP
         WHERE created_at IS NULL
     `)
 
-    await db.close()
+     db.close()
     console.log('created_at updated')
 }
 
-async function dbTable() {
-    const db = await dbConnection()
+ function dbTable() {
+    const db =  dbConnection()
     db.exec('DROP TABLE bookmarks')
-    await db.close()
+     db.close()
 
     console.log('table deleted successfully')
 

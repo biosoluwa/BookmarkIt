@@ -20,13 +20,13 @@ export async function addBookmark(req,res) {
         return res.status(400).json({error: "Invalid URL"})
     }
     try{
-        const db = await dbConnection()
-        const existing = await db.get(`SELECT id FROM bookmarks WHERE url =?`, [url])
+        const db =  dbConnection()
+        const existing =  db.prepare(`SELECT id FROM bookmarks WHERE url =?`).get(url)
 
         if(existing){
             return res.status(400).json({error: 'Url already exixts'})
         }
-        await db.run(`INSERT INTO bookmarks(user_id, title, url, tag, is_favorite)VALUES(?, ?,?,?,?)`, [req.session.userId, title, url, tag, status])
+         db.prepare(`INSERT INTO bookmarks(user_id, title, url, tag, is_favorite)VALUES(?, ?,?,?,?)`).run(req.session.userId, title, url, tag, status)
         res.status(201).json({message: "New bookmark added"})
     }catch(err){
         res.status(500).json({error: "Internal server error"})
@@ -35,10 +35,10 @@ export async function addBookmark(req,res) {
 }
 
 
-export async function getBookmarks(req,res) {
+export function getBookmarks(req,res) {
     try{
-        const db = await dbConnection()
-        const result = await db.all(`SELECT * FROM bookmarks WHERE user_id =?`, [req.session.userId])
+        const db =  dbConnection()
+        const result =  db.prepare(`SELECT * FROM bookmarks WHERE user_id =?`).all(req.session.userId)
         res.json(result)
     }catch(err){
         res.status(500).json({error: "Internal server error"})
@@ -49,7 +49,7 @@ export async function filterBookmarks(req,res) {
     let {is_favorite, tag, search} = req.query
 
     try{
-        const db = await dbConnection()
+        const db =  dbConnection()
         let query = `SELECT * FROM bookmarks WHERE user_id = ?`
         let param = [req.session.userId]
         if(is_favorite){
@@ -64,7 +64,7 @@ export async function filterBookmarks(req,res) {
             param.push(searchPattern, searchPattern)
         }
 
-        const filteredBookmarks = await db.all(query, param)
+        const filteredBookmarks =  db.prepare(query).all(...param)
         res.json(filteredBookmarks)
     }catch(err){
         res.status(500).json({error: 'Internal server error'})
@@ -73,14 +73,14 @@ export async function filterBookmarks(req,res) {
 
 export async function deleteBookmark(req, res){
     try{
-        const db = await dbConnection()
+        const db =  dbConnection()
 
         const cardId = parseInt(req.params.id)
         if(isNaN(cardId)){
             return res.status(400).json({error: 'Invalid Item ID'})
         }
 
-        await db.run(`DELETE FROM bookmarks WHERE id = ? and user_id =?`, [cardId, req.session.userId])
+         db.prepare(`DELETE FROM bookmarks WHERE id = ? and user_id =?`).run(cardId, req.session.userId)
         res.status(204).send()
     }catch(err){
         res.status(500).json({error: 'Internal server error'})
