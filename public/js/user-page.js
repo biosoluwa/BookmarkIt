@@ -45,20 +45,20 @@ async function renderBookmarks(){
         }
 
         bookmarkHtml += `
-                <div>
-                    <div>${icon}</div>
-                    <div>
-                        <p>${bookmark.title}</P
-                        <span>${bookmark.url}</span>
-                        <div>
-                            <div>${bookmark.tag}</div>
-                            <span>${bookmark.created_at}</span>
+                <div class="card">
+                    <div class="card-icon">${icon}</div>
+                    <div class="card-body">
+                        <p class="card-title">${bookmark.title}</P
+                        <span class="card-url">${bookmark.url}</span>
+                        <div class="class-meta">
+                            <div class="tag">${bookmark.tag}</div>
+                            <span class="card-date">${bookmark.created_at}</span>
                         </div>
                     </div>
-                    <div>
-                        <button><i class="ti ti-edit"></i></button>
-                        <button><i class="ti ti-external-link"></i></button>
-                        <button><i class="ti ti-trash"></i></button>
+                    <div class="card-actions">
+                        <button class="action-btn"><i class="ti ti-edit"></i></button>
+                        <button class="action-btn"><i class="ti ti-external-link"></i></button>
+                        <button class="action-btn del"><i class="ti ti-trash"></i></button>
                     </div>
                 </div>
             `

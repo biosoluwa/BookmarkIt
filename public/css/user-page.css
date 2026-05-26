@@ -211,4 +211,95 @@ a.add-bookmark{
     color: #993C1D;
 }
 
+.card{
+    border: 0.5px solid rgb(222 220 209 / 15%);
+    border-radius: 10px;
+    padding: 12px 14px;
+    display: flex;
+    align-items: flex-start;
+    gap: 11px;
+    background-color: rgb(48 48 46);
+    margin: 0;
+}
 
+.card:hover{
+    border-color: #DDD6FE;
+}
+.card-icon{
+    background: #EEEDFE;
+    width: 32px;
+    height: 32px;
+    border-radius: 7px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+    flex-shrink: 0;
+    margin: 0;
+    padding: 0;
+}
+
+.card-icon > i{
+    color: #7c3aed;
+}
+
+.card-body{
+    flex: 1;
+    min-width: 0;
+}
+
+.card-title{
+    font-size: 13px;
+    font-weight: 500;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: rgb(250 249 245);
+}
+
+.card-url{
+    font-size: 11px;
+    color: rgb(156 154 146);
+    margin-top: 2px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.card-meta{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 7px;
+}
+
+.tag{
+    background: #EEEDFE;
+    color: #534AB7;
+    font-size: 10px;
+    padding: 2px 8px;
+    border-radius: 99px;
+    font-weight: 500;
+}
+
+.card-date{
+    font-size: 10px;
+    color: rgb(156 154 146);
+}
+
+.card-actions{
+    display: flex;
+    gap: 4px;
+    flex-shrink: 0;
+}
+
+.action-btn{
+    width: 28px;
+    height: 28px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgb(250 249 245);
+    cursor: pointer;
+}
