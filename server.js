@@ -8,7 +8,7 @@ import dotenv from 'dotenv'
 dotenv.config()
 
 const app = express()
-const PORT = 8000
+const PORT = process.env.PORT || 8000
 
 app.use(express.json())
 
@@ -18,7 +18,7 @@ app.use(session({
     saveUninitialized:false,
     cookie:{
         httpOnly:true,
-        secure:false,
+        secure:true,
         sameSite:'lax'
     }
 
