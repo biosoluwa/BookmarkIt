@@ -11,7 +11,6 @@ import { dbConnection } from './dbConnection.js'
         created_at DATETIME DEFAULT CURRENT_TIMESTAMP
         )`)
     
-     db.close()
     console.log('Table users created')
 }
 
@@ -28,7 +27,6 @@ import { dbConnection } from './dbConnection.js'
         created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
         FOREIGN KEY (user_id) REFERENCES users(id)
         )`)
-         db.close()
         console.log('Table bookmarks created')
 }
 

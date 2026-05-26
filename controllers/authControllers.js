@@ -29,7 +29,7 @@ export async function registerUser(req, res){
 
         const newUser =  db.prepare(`INSERT INTO users(first_name, last_name, email, password)VALUES(?,?,?,?)`).run(firstName, lastName, signupEmail, signupPassword)
         
-        req.session.userId = newUser.lastID
+        req.session.userId = newUser.lastInsertRowid
         res.status(201).json({message: 'user registered'})
 
     }catch(err){
@@ -54,7 +54,7 @@ export async function loginUser(req,res) {
 
     try{
         const db =  dbConnection()
-        const existing =  db.prepare(`SELECT * FROM users WHERE email=?`).gett(email);
+        const existing =  db.prepare(`SELECT * FROM users WHERE email=?`).get(email);
         
         if(!existing){
             return res.status(401).json({error: 'Invalid credentials'})
