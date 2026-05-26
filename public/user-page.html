@@ -22,77 +22,77 @@
     <main>
         <div class="left-container">
             <p>FILTER</p>
-            <div class="s-item">
+            <div class="s-item" id="all-items">
                 <div class="s-item-left">
                     <i class="ti ti-layout-list"></i>
                     <span>All</span>
                 </div>
-                <div class="s-count">12</div>
+                <div class="s-count" id="all-count"></div>
             </div>
-            <div class="s-item">
+            <div class="s-item" id="favorites-div">
                 <div class="s-item-left">
                     <i class="ti ti-star"></i>
                     <span>Favourites</span>
                 </div>
-                <div class="s-count">3</div>
+                <div class="s-count" id="s-count-favorites"></div>
             </div>
         <div class="hr"></div>      
         <p>BY TAG</p>
-            <div class="s-item">
+            <div class="s-item" id="article-div">
                 <div class="s-item-left">
                     <div class="round blue"></div>
                     <p>article</p>
                 </div>  
-                <div class="s-count">5</div>
+                <div class="s-count" id="s-count-article">5</div>
             </div>
-            <div class="s-item">
+            <div class="s-item" id="tool-div">
                 <div class="s-item-left">
                     <div class="round purple"></div>
                     <p>tool</p>
                 </div>  
-                <div class="s-count">4</div>
+                <div class="s-count" id="s-count-tool">4</div>
             </div>
-            <div class="s-item">
+            <div class="s-item" id="video-div">
                 <div class="s-item-left">
                     <div class="round orange"></div>
                     <p>video</p>
                 </div>  
-                <div class="s-count">2</div>
+                <div class="s-count" id="s-count-video">2</div>
             </div>
-            <div class="s-item">
+            <div class="s-item" id="reference-div">
                 <div class="s-item-left">
                     <div class="round green"></div>
                     <p>reference</p>
                 </div>  
-                <div class="s-count">1</div>
+                <div class="s-count" id="s-count-reference">1</div>
             </div>
         </div>
         <div class="right-container">
             <div class="search-add-div">
-                <input type="text" class="search-input" name="search-input" id="" aria-label="search for your bookmark" placeholder="Search bookmarks...">
+                <input type="text" class="search-input" name="search-input" id="search-input" aria-label="search for your bookmark by title or tag" placeholder="Search bookmarks...">
                 <a href="add-bookmark.html" class="add-bookmark"><i class="ti ti-plus"></i> Add bookmark </a>
             </div>
             <div class="stats-row">
                 <div class="stat">
-                    <span class="twelve">12</span>
+                    <span class="total-saved" id="total-saved">0</span>
                     <p>Total saved</p>
                 </div>
                 <div class="stat">
-                    <span class="blue-num">5</span>
+                    <span class="blue-num" id="blue-num">0</span>
                     <div class="stat-i">
                         <div class="round blue"></div>
                         <p>Articles</p>
                     </div>
                 </div>
                 <div class="stat">
-                    <span class="purple-num">4</span>
+                    <span class="purple-num" id="purple-num">0</span>
                     <div class="stat-i">
                         <div class="round purple"></div>
                         <p>Tools</p>
                     </div>
                 </div>
                  <div class="stat">
-                    <span class="orange-num">3</span>
+                    <span class="orange-num" id="orange-num">0</span>
                     <div class="stat-i">
                         <div class="round orange"></div>
                         <p>Favourites</p>

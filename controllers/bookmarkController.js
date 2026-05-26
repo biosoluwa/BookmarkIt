@@ -1,5 +1,6 @@
 import validator from 'validator'
 import { dbConnection } from '../dbConnection.js'
+import { error } from 'node:console'
 
 
 export async function addBookmark(req,res) {
@@ -41,5 +42,31 @@ export async function getBookmarks(req,res) {
         res.json(result)
     }catch(err){
         res.status(500).json({error: "Internal server error"})
+    }
+}
+
+export async function filterBookmarks(req,res) {
+    let {is_favorite, tag, search} = req.query
+
+    try{
+        const db = await dbConnection()
+        let query = `SELECT * FROM bookmarks`
+        let param = []
+        if(is_favorite){
+            query += `WHERE is_favorite=?`
+            param.push(is_favorite)
+        }else if(tag){
+            query += `WHERE tag=?`
+            param.push(tag)
+        }else if(search){
+            query += `WHERE tag LIKE? OR title LIKE?`
+            const searchPattern = `%${search}%`
+            param.push(searchPattern, searchPattern)
+        }
+
+        const filteredBookmarks = await db.all(query, param)
+        res.json(filterBookmarks)
+    }catch(err){
+        res.status(500).json({error: 'Internal server error'})
     }
 }
