@@ -3,6 +3,7 @@ const loginForm = document.getElementById('login-form')
 const agreeCheckbox = document.getElementById('agree')
 const signupPassword = document.getElementById('signup-password')
 const confirmPassword = document.getElementById('confirm-password')
+const signupEmailInput = document.getElementById('signup-email')
 
 document.addEventListener('click', (e)=>{
     if(e.target.classList.contains('tab')){
@@ -44,6 +45,16 @@ document.addEventListener('click', (e)=>{
 
 
 confirmPassword.addEventListener('input', checkPasswords)
+
+
+signupEmailInput.addEventListener('blur', (e)=>{
+    const value = e.target.value;
+    if(!validateEmail(value)){
+        document.getElementById('enter-valid').textContent = 'Enter a valid email address'
+    }else{
+        document.getElementById('enter-valid').textContent = 'Your email address is valid'
+    }
+})
 
 function checkPasswords(){
     if(signupPassword.value !== confirmPassword.value){
@@ -91,6 +102,7 @@ async function sendData(firstName, lastName, signupEmail, signupPassword){
             window.location.replace('user-page.html')
             console.log('Account created')
         }else{
+            document.getElementById('signup-error-message').innerHTML = res.error
             console.log('Failed to create account')
         }
     }catch(err){
@@ -128,6 +140,7 @@ async function sendLoginDetails(loginDetails){
         if(res.ok){
             window.location.href = 'user-page.html'
         }else{
+            document.getElementById('login-error-message').innerHTML = res.error
             console.log('Login failed. Please try again')
         }
     }catch(err){

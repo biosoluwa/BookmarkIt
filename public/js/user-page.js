@@ -1,6 +1,8 @@
 import { logout } from "./logout.js"
 import { returnEmail } from "./returnEmail.js"
 import { getFavorites, getArticles, getTools, getVideos, getReference , renderSearch} from "./filterFunctions.js"
+import { deleteItem, shareURL } from "./actionButtons.js"
+
 
 const mail = await returnEmail()
 const mailP = document.getElementById('user-mail')
@@ -10,7 +12,7 @@ fetchBookmarks()
 
 document.getElementById('log-out').addEventListener('click', logout)
 
-async function fetchBookmarks() {
+export async function fetchBookmarks() {
     try{
         const res = await fetch('/api/bookmarks/all')
         if(!res.ok){
@@ -45,7 +47,7 @@ export function renderBookmarks(data){
         }
 
         bookmarkHtml += `
-                <div class="card">
+                <div class="card" data-id="${bookmark.id}">
                     <div class="card-icon">${icon}</div>
                     <div class="card-body">
                         <p class="card-title">${bookmark.title}</p>
@@ -56,8 +58,8 @@ export function renderBookmarks(data){
                         </div>
                     </div>
                     <div class="card-actions">
-                        <button class="action-btn"><i class="ti ti-edit"></i></button>
-                        <button class="action-btn"><i class="ti ti-external-link"></i></button>
+                        <button class="action-btn edit"><i class="ti ti-edit"></i></button>
+                        <button class="action-btn share"><i class="ti ti-external-link"></i></button>
                         <button class="action-btn del"><i class="ti ti-trash"></i></button>
                     </div>
                 </div>
@@ -131,4 +133,16 @@ const searchInput = document.getElementById('search-input')
 
 searchInput.addEventListener('input', async()=>{
     await renderSearch(searchInput.value)
+})
+
+document.getElementById('bookmarks-container').addEventListener('click', function(e){
+    if(e.target.classList.contains('del')){
+        const card = e.target.closest('.card')
+        const cardId = card.getAttribute('data-id')
+        deleteItem(cardId)
+    }else if(e.target.classList.contains('share')){
+        const card = e.target.closest('card')
+        const link = card.querySelector('.card-url').textContent
+        shareURL(link)
+    }
 })

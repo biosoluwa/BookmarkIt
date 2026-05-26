@@ -41,6 +41,7 @@ export async function registerUser(req, res){
     }
 }
 
+
 export async function loginUser(req,res) {
     let {email, password} = req.body
 

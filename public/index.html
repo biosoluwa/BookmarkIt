@@ -74,12 +74,13 @@
                 <input type="password" id="password" name="password" placeholder="••••••••" required>
             </div>
             <button class="login-btn">Log in <i class="fa-solid fa-arrow-right"></i> </button>
+            <div class="error-message" id="login-error-message"></div>
             <div class="right-foots">
                 <p>No account? </p>
                 <a href="#" id="create-free">Create one free</a> 
             </div>
         </form>
-        <form action="" class="signup-form" id="signup-form">
+        <form class="signup-form" id="signup-form">
             <div class="names">
                 <div>
                     <label for="first-name"> FIRST NAME</label>
@@ -93,15 +94,12 @@
             <div>
                 <label for="signup-email"> EMAIL ADDRESS</label>
                 <input type="email" id="signup-email" name="signup-email" placeholder="alex@" >
-                <span class="enter-valid">Enter a valid email address</span>
+                <span class="enter-valid" id="enter-valid"></span>
             </div>
             <div>
                 <label for="signup-password"> PASSWORD</label>
-                <input type="password" id="signup-password" name="signup-password" placeholder="Min. 8 characters" required>
-                <div>
-                    <div class="password-strength"></div>
-                    <p></p>
-                </div>
+                <input type="password" id="signup-password" name="signup-password" placeholder="Min. 8, max. 16 characters" required pattern="(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,16}" title="Minimum 8 characters, maximum 16 characters, at least 1 uppercase, 1 lowercase, 1 number, and 1 special character.">
+                <div class="password-strength">Add at least 1 uppercase, 1 lowercase, 1 number, and 1 special character</div>
             </div>
             <div>
                 <label for="confirm-password">CONFIRM PASSWORD</label>
@@ -112,6 +110,7 @@
                 <label for="agree">I agree to the <span class="purple">Terms of Service</span> and <span class="purple">Privacy Policy</span></label>
             </div>
             <button>Create Account <i class="fa-solid fa-arrow-right"></i> </button>
+            <div id="signup-error-message"></div>
             <div class="right-foots">
                 <p>Already have an account? </p>
                 <a href="#" class="purple" id="a-login">Log in</a> 
