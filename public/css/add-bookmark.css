@@ -13,7 +13,7 @@ html,body{
 body{
       display: flex;
       flex-direction: column;
-      font-family: "Sansita Swashed", system-ui;
+      font-family: 'Plus Jakarta Sans', sans-serif;
 }
 
 input, select, textarea, button{
@@ -198,7 +198,7 @@ form > div{
 }
 
 .tag-type:hover{
-    background-color: #7c3aed;
+    background-color: rgb(38 38 36);
 }
 
 .fav-toggle{
@@ -264,4 +264,9 @@ form > div{
 
 i.show-star{
     display: block;
+}
+
+.error-message{
+    color: red;
+    text-align: center;
 }

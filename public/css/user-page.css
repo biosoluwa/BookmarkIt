@@ -13,7 +13,7 @@ html,body{
 body{
       display: flex;
       flex-direction: column;
-      font-family: "Sansita Swashed", system-ui;
+      font-family: 'Plus Jakarta Sans', sans-serif;
 }
 
 input, select, textarea, button{

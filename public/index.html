@@ -9,8 +9,7 @@
     <!-- google font  -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Sansita+Swashed:wght@300..900&display=swap" rel="stylesheet">
-    <!-- stylesheet  -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600&display=swap" rel="stylesheet">    <!-- stylesheet  -->
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -99,7 +98,7 @@
             <div>
                 <label for="signup-password"> PASSWORD</label>
                 <input type="password" id="signup-password" name="signup-password" placeholder="Min. 8, max. 16 characters" required pattern="(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*\-]).{8,16}" title="Minimum 8 characters, maximum 16 characters, at least 1 uppercase, 1 lowercase, 1 number, and 1 special character.">
-                <div class="password-strength">Add at least 1 uppercase, 1 lowercase, 1 number, and 1 special character</div>
+                <div class="password-details">Add at least 1 uppercase, 1 lowercase, 1 number, and 1 special character</div>
             </div>
             <div>
                 <label for="confirm-password">CONFIRM PASSWORD</label>
@@ -110,7 +109,7 @@
                 <label for="agree">I agree to the <span class="purple">Terms of Service</span> and <span class="purple">Privacy Policy</span></label>
             </div>
             <button>Create Account <i class="fa-solid fa-arrow-right"></i> </button>
-            <div id="signup-error-message"></div>
+            <div id="signup-error-message" class="error-message"></div>
             <div class="right-foots">
                 <p>Already have an account? </p>
                 <a href="#" class="purple" id="a-login">Log in</a> 

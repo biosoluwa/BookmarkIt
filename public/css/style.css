@@ -11,7 +11,7 @@ html,body{
 
 body{
       display: flex;
-      font-family: "Sansita Swashed", system-ui;
+      font-family: 'Plus Jakarta Sans', sans-serif;
 }
 
 input, select, textarea, button{
@@ -196,4 +196,14 @@ span.enter-valid{
 
 .purple{
       color: #7c3aed;
+}
+
+
+.password-details{
+      color: #C2C0B6;
+}
+
+.error-message{
+      color: red;
+      text-align: center;
 }
