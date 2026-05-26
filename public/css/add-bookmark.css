@@ -270,3 +270,76 @@ i.show-star{
     color: red;
     text-align: center;
 }
+
+@media(max-width: 600px){
+    
+header{
+    padding: 1em;
+}
+
+.logo{
+      font-size: 1rem;
+}
+
+
+
+.user-mail{
+    font-size: 0.6rem;
+}
+
+.log-out{
+    font-size: 0.7rem;
+}
+
+main{
+    flex-direction: row;
+}
+
+.left-container{
+      flex-direction: column;
+      gap: 0.25em;
+    padding: 1em 0;
+}
+
+.s-item{
+    padding: 8px 5px;
+    font-size: 0.8em;
+}
+
+
+
+.right-container{
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.fav-toggle{
+    gap: 10px;
+    padding: 10px 12px;
+    border: 0.5px solid rgb(222 220 209 / 30%);
+    border-radius: 8px;
+}
+
+.fav-toggle p{
+    margin: 0;
+}
+
+
+.nav-bottom{
+    gap: 1em;
+}
+
+.nav-bottom > a{
+    width: 40%;
+    padding: 8px 10px;
+    font-size: 0.875em;
+}
+
+.nav-bottom > button{
+      width: 60%;
+      font-size: 0.85em;
+      padding: 0.5em 1em;
+}
+}

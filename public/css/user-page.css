@@ -189,7 +189,6 @@ a.add-bookmark{
 }
 
 .total-saved{
-    color: 1.125em;
     color: rgb(250 249 245);
 }
 
@@ -324,4 +323,113 @@ a.add-bookmark{
 
 .action-btn:hover{
     background: rgb(38 38 36);
+}
+
+
+@media(max-width:600px){
+ 
+
+header{
+    padding: 1em;
+}
+
+.logo{
+      font-size: 1rem;
+}
+
+
+
+.user-mail{
+    font-size: 0.6rem;
+}
+
+.log-out{
+    font-size: 0.7rem;
+}
+
+main{
+    flex-direction: row;
+}
+
+.left-container{
+      flex-direction: column;
+      gap: 0.25em;
+    padding: 1em 0;
+}
+
+.s-item{
+    padding: 8px 5px;
+    font-size: 0.8em;
+}
+
+
+
+.right-container{
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+}
+
+.search-add-div{
+    padding: 0.5em 0.75em;
+    border-bottom: rgb(222 220 209 / 15%);
+    gap: 1em;
+    align-items: center;
+}
+
+input.search-input{
+    font-size: 0.75rem;
+    width: 60%;
+}
+
+a.add-bookmark{
+    width: 30%;
+    padding: 0.5em 0.7em;
+    font-size: 0.6rem;
+    border-radius: 0.65em;
+    font-weight: normal;
+}
+
+.stats-row{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.5em;
+    padding: 0.875em 0.5em;
+}
+
+.stat{
+    border-radius: 0.5em;
+    padding: 1em 0.5em;
+    text-align: center;
+    color: rgb(156 154 146);
+    font-size: 0.65em;
+}
+
+.stat p{
+    margin: 0;
+}
+
+
+.bookmarks-container{
+    padding: 12px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.card{
+    border: 1.5px solid rgb(222 220 209 / 15%);
+}
+
+.card-icon{
+    width: 28px;
+    height: 28px;
+}
+
+
+.card-title{
+    font-size: 11px;
+}
+
+
 }
