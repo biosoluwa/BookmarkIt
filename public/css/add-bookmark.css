@@ -78,14 +78,10 @@ main{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    cursor: pointer;
     padding: 7px 8px;
     border-radius: 6px;
 }
 
-.s-item:hover{
-    background-color: rgb(20 20 19);
-}
 
 .s-item-left{
     display: flex;
@@ -97,14 +93,6 @@ main{
     margin: 0;
 }
 
-.s-count{
-    font-size: 0.625rem;
-    background-color: rgb(38 38 36);
-    color:rgb(156 154 146);
-    padding: 1px 7px ;
-    border-radius: 50%;
-    text-align: center;
-}
 
 div.hr{
     border-bottom: 1px solid rgb(222 220 209 / 15%);
