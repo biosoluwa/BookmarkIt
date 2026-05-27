@@ -29,7 +29,7 @@ export async function registerUser(req, res){
 
         const newUser =  db.prepare(`INSERT INTO users(first_name, last_name, email, password)VALUES(?,?,?,?)`).run(firstName, lastName, signupEmail, signupPassword)
         
-        req.session.userId = newUser.lastInsertRowid
+        req.session.userId = Number(newUser.lastInsertRowid)
         res.status(201).json({message: 'user registered'})
 
     }catch(err){

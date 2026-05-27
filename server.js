@@ -2,6 +2,7 @@ import express from 'express'
 import { authRouter } from './routers/authRoutes.js'
 import { meRouter } from './routers/meRouter.js'
 import { bookmarkRouter } from './routers/bookmarkRoutes.js'
+import './createTable.js'
 import session  from 'express-session'
 import dotenv from 'dotenv'
 
