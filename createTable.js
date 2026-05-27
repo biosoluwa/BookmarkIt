@@ -30,6 +30,6 @@ import { dbConnection } from './dbConnection.js'
         console.log('Table bookmarks created')
 }
 
-// createUserTable()
+createUserTable()
 
 createBookmarkTable()

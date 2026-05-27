@@ -64,6 +64,7 @@ async function sendBookmarkData(bookmarkObj){
             headers:{
                 "Content-Type": "application/json"
             },
+            credentials: 'include',
             body: JSON.stringify(bookmarkObj)
         })
         const data = await res.json()

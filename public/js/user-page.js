@@ -14,7 +14,9 @@ document.getElementById('log-out').addEventListener('click', logout)
 
 export async function fetchBookmarks() {
     try{
-        const res = await fetch('/api/bookmarks/all')
+        const res = await fetch('/api/bookmarks/all', {
+            credentials: 'include'
+        })
         if(!res.ok){
             console.warn('Unexpected response', res.status)
             window.location.href = '/'

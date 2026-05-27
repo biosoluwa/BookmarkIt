@@ -2,7 +2,9 @@ import { renderBookmarks } from "./user-page.js"
 
  async function getFavorites(){
     try{
-        const res = await fetch('/api/bookmarks/filter?is_favorite=1')
+        const res = await fetch('/api/bookmarks/filter?is_favorite=1', {
+            credentials: 'include'
+        })
         if(!res.ok){
             console.log('network error')
             return false
@@ -16,7 +18,9 @@ import { renderBookmarks } from "./user-page.js"
 
 async function getArticles(){
     try{
-        const res = await fetch('/api/bookmarks/filter?tag=article')
+        const res = await fetch('/api/bookmarks/filter?tag=article', {
+            credentials: 'include'
+        })
         if(!res.ok){
             console.log('network error')
             return false
@@ -30,7 +34,7 @@ async function getArticles(){
 
 async function getTools(){
     try{
-        const res = await fetch('/api/bookmarks/filter?tag=tool')
+        const res = await fetch('/api/bookmarks/filter?tag=tool', {credentials: 'include'})
         if(!res.ok){
             console.log('network error')
             return false
@@ -44,7 +48,7 @@ async function getTools(){
 
 async function getVideos(){
     try{
-        const res = await fetch('/api/bookmarks/filter?tag=video')
+        const res = await fetch('/api/bookmarks/filter?tag=video', {credentials: 'include'})
         if(!res.ok){
             console.log('network error')
             return false
@@ -58,7 +62,7 @@ async function getVideos(){
 
 async function getReference(){
     try{
-        const res = await fetch('/api/bookmarks/filter?tag=reference')
+        const res = await fetch('/api/bookmarks/filter?tag=reference', {credentials: 'include'})
         if(!res.ok){
             console.log('network error')
             return false
@@ -72,7 +76,7 @@ async function getReference(){
 
 async function renderSearch(searchInput){
     try{
-        const res = await fetch(`/api/bookmarks/filter?search=${searchInput}`)
+        const res = await fetch(`/api/bookmarks/filter?search=${searchInput}`, {credentials: 'include'})
         if(!res.ok){
             console.log('network error')
             return false
